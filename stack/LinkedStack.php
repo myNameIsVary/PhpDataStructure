@@ -8,27 +8,20 @@
 namespace stack;
 
 use linked\DoubleLinkedList;
+use template\LinkedInitialization;
+use template\StackQueue;
 
+require_once __DIR__ . '/../template/StackQueue.php';
 require_once __DIR__ . '/../linked/DoubleLinkedList.php';
+require_once __DIR__ . '/../template/LinkedInitialization.php';
 
 /**
  * Class LinkedStack
  * @package stack
  */
-class LinkedStack extends DoubleLinkedList
+class LinkedStack extends DoubleLinkedList implements StackQueue
 {
-    protected int $maxSize = 0;
-
-    protected int $currentLength = 0;
-
-    /**
-     * initialization max size
-     * @param $maxSize
-     */
-    public function initialization($maxSize)
-    {
-        $this->maxSize = $maxSize;
-    }
+   use LinkedInitialization;
 
     /**
      * push value

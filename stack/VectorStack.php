@@ -9,14 +9,16 @@
 namespace stack;
 
 require_once __DIR__ . '/../vector/VectorArray.php';
+require_once __DIR__ . '/../template/StackQueue.php';
 
+use template\StackQueue;
 use vector\VectorArray;
 
 /**
  * Class VectorStack
  * @package stack
  */
-class VectorStack extends VectorArray
+class VectorStack extends VectorArray implements StackQueue
 {
     /**
      * @param $value
